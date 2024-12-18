@@ -3,6 +3,13 @@
 if (isset($_GET['Submit'])) {
     // Get input
     $id = $_GET['id'];
+
+    // Ensure the input contains only digits
+    if (!ctype_digit($id)) {
+        print "Invalid input. User ID must contain only digits.";
+        exit;
+    }
+
     $exists = false;
 
     if ($_DVWA['SQLI_DB'] === MYSQL) {
