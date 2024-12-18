@@ -6,7 +6,8 @@ if (isset($_GET['Submit'])) {
 
     // Ensure the input contains only digits
     if (!ctype_digit($id)) {
-        print "Invalid input. User ID must contain only digits.";
+        $html = "<pre style='color: red;'>Invalid input. User ID must contain only digits.</pre>";
+        echo $html;
         exit;
     }
 
